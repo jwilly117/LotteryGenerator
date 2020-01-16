@@ -28,6 +28,7 @@
   </div>
 
   <!-- Here we have div called "random-number" where our random number will go -->
+  <h2 class="text-center">Generated Lottery Number:</h2>
   <h1 class="text-center" id="random-number"></h1>
 
   <script type="text/javascript">
@@ -37,7 +38,24 @@
       // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
       // ...
       $("#random-button").on("click", function(){
-        $("#random-number").text(Math.floor((Math.random() *1000) + 1));
+
+        //Create a full number variable
+        var fullNumber = "";
+
+        // $("#random-number").text(Math.floor((Math.random() *1000) + 1));
+        var nums = [0,0,0,0,0,0,0,0,0];
+        nums.forEach(number => {
+            number = Math.floor((Math.random() *10)).toString();
+            console.log(number);
+            fullNumber = fullNumber + number;
+        });
+        
+        //Testing Concatenation
+        console.log(fullNumber);
+
+        $("#random-number").text(fullNumber);
+
+
       })
 
       // ...
